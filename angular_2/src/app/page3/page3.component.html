@@ -1,20 +1,15 @@
 <div class="container">
   <h1>My ToDo List</h1>
   <input type="text" placeholder="Inserisci un nuovo item alla lista" />
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Cose da fare</th>
-        <th>Fatto</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th></th>
-      </tr>
-    </tbody>
-  </table>
+  <div class="list-group d-flex" *ngFor="let item of items; let i = index">
+    <button
+      [ngClass]="classe_done"
+      (click)="done(item)"
+      type="button"
+      class="list-group-item list-group-item-action"
+      aria-current="true"
+    >
+      {{ i + 1 }}. {{ item.item }}
+    </button>
+  </div>
 </div>
-
-{{ items | json }}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IItems } from '../interfaces/iitems';
 
 @Component({
   selector: 'app-page3',
@@ -34,5 +35,10 @@ export class Page3Component implements OnInit {
       item: "completare l'esercizio Angular2",
     }
   ]
+  classe_done = 'cgray'
+
+  done(obj:IItems){
+    this.classe_done =(this.classe_done=== 'cgray')? 'cnormal':'cgray'
+  }
 
 }
