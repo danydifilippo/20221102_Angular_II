@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../classes/todo';
 import { IItems } from '../interfaces/iitems';
 
 @Component({
@@ -13,7 +14,7 @@ export class Page3Component implements OnInit {
   ngOnInit(): void {
   }
 
-  items = [
+  items: Todo[] = [
     {
       id: 1,
       item: "pagare assicurazione auto",
@@ -35,10 +36,16 @@ export class Page3Component implements OnInit {
       item: "completare l'esercizio Angular2",
     }
   ]
+
   classe_done = 'cgray'
 
   done(obj:IItems){
     this.classe_done =(this.classe_done=== 'cgray')? 'cnormal':'cgray'
+  }
+  todo = new Todo();
+
+  addtodo(){
+    this.items.push(this.todo)
   }
 
 }

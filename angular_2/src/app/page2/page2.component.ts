@@ -22,4 +22,5 @@ export class Page2Component implements OnInit {
     'padding' : '1em'
   }
 
+  txt: string = "Testo"
 }

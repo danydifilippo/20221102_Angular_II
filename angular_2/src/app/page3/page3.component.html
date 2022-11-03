@@ -1,10 +1,14 @@
 <div class="container">
   <h1>My ToDo List</h1>
-  <input type="text" placeholder="Inserisci un nuovo item alla lista" />
+  <input
+    type="text"
+    placeholder="Inserisci un nuovo item alla lista"
+    [(ngModel)]="todo.item"
+    (keyup.enter)="addtodo()"
+  />
   <div class="list-group d-flex" *ngFor="let item of items; let i = index">
     <button
       [ngClass]="classe_done"
-      (click)="done(item)"
       type="button"
       class="list-group-item list-group-item-action"
       aria-current="true"
@@ -13,3 +17,4 @@
     </button>
   </div>
 </div>
+<!-- (click)="done(item)" -->
